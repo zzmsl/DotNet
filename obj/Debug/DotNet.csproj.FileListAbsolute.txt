@@ -1,0 +1,9 @@
+D:\jmzgo\DotNet\bin\Debug\DotNet.dll
+D:\jmzgo\DotNet\bin\Debug\DotNet.pdb
+D:\jmzgo\DotNet\obj\Debug\DotNet.dll
+D:\jmzgo\DotNet\obj\Debug\DotNet.pdb
+D:\jmzgo\DotNet\obj\Debug\DotNet.csprojResolveAssemblyReference.cache
+D:\iCode\iCodeWeb\DotNet\bin\Debug\DotNet.dll
+D:\iCode\iCodeWeb\DotNet\bin\Debug\DotNet.pdb
+D:\iCode\iCodeWeb\DotNet\obj\Debug\DotNet.dll
+D:\iCode\iCodeWeb\DotNet\obj\Debug\DotNet.pdb

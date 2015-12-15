@@ -1,0 +1,1102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet</name>
+    </assembly>
+    <members>
+        <member name="M:DotNet.IO.Directory.CreateDirectory(System.String)">
+            <summary>
+            按参数生（如 e:\temp\web）成目录
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:DotNet.IO.Directory.CurrentDirectory">
+            <summary>
+            返回当前.exe文件所在的目录，x:\xxx\xxx
+            </summary>
+        </member>
+        <member name="M:DotNet.IO.Directory.GetDirectoryName(System.String)">
+            <summary>
+            返回目录名，如输入@"e:\wwwroot\bc.txt" 返回 e:\wwwroot
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.Path.GetExtension(System.String)">
+            <summary>
+            返回扩展名，如输入@"e:\wwwroot\bc.txt" 返回 .txt
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.Path.GetFileName(System.String)">
+            <summary>
+            返回文件名，如输入@"e:\wwwroot\bc.txt" 返回 bc.txt
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.Path.GetDirectoryName(System.String)">
+            <summary>
+            返回目录名，如输入@"e:\wwwroot\bc.txt" 返回 e:\wwwroot
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.Text.ReadToList(System.String)">
+            <summary>
+            读取文件，支持多线程
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.Text.AppendText(System.String,System.String)">
+            <summary>
+            把日志写入文件，每日一个文件，支持多线程
+            </summary>
+            <param name="inputString"></param>
+        </member>
+        <member name="M:DotNet.IO.File.Delete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+        </member>
+        <member name="M:DotNet.IO.File.IsAllowExtension(System.String)">
+            <summary>
+            是否合格的上传文件扩展名
+            </summary>
+            <param name="extension"> .jpg </param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.File.IsAllowFile(System.IO.Stream)">
+            <summary>
+            是否合格的上传文件格式，判断文件前两个字节
+            255216 jpg
+            7173 gif
+            13780 png
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.IO.File.CopyFile(System.String,System.String)">
+            <summary>
+            复制文件，如果路径不存在，则创建
+            </summary>
+            <param name="sourceFileName">源路径</param>
+            <param name="destFileName">新路径</param>
+        </member>
+        <member name="M:DotNet.IO.File.GetFiles(System.String)">
+            <summary>
+            取得目录下所有文件
+            </summary>
+            <param name="path">源路径（不包括文件名）</param>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.MD5(System.String)">
+            <summary>
+            MD5 加密算法的实现
+            </summary>
+            <param name="sourceString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.EncryptX(System.String,System.Int32)">
+            <summary>
+            加密字符，DecryptX为此加密的解密
+            </summary>
+            <param name="sourceString"></param>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSAEncrypt(System.String,System.String)">
+            <summary>
+            rsa加密 http://www.jackyinfo.com/post/2011/04/26/6480f.aspx
+            超过117字节的数据出错 
+            </summary>
+            <param name="key"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSADecrypt(System.String,System.String)">
+            <summary>
+            rsa解密
+            </summary>
+            <param name="key"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSASignData(System.String,System.String)">
+            <summary>
+            RSA签名，使用pem格式证书
+            </summary>
+            <param name="data"></param>
+            <param name="pemPrivateKeyPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSAVerifyData(System.String,System.String,System.String)">
+            <summary>
+            验证签名，使用公匙验证
+            </summary>
+            <param name="originalString">原文：UTF8编码</param>
+            <param name="signatureString">签名：base64编码的字节</param>
+            <param name="pemPublicKeyPath">公钥路径</param>
+            <returns> 验签结果</returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSASignDataXmlKey(System.String,System.String)">
+            <summary>
+            RSA签名，使用.Net生成的 RSAKeyValue
+            超过117字节的数据 不会 出错！
+            </summary>
+            <param name="data"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.RSAVerifyDataXmlKey(System.String,System.String,System.String)">
+            <summary>
+            RSA验证签名，使用.Net生成的 RSAKeyValue
+            </summary>
+            <param name="originalString"></param>
+            <param name="signatureString"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.DESGenerateKey">
+            <summary>
+            创建DES密钥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.DESEncrypt(System.String,System.String)">
+            <summary>
+            进行DES加密。
+            </summary>
+            <param name="data">要加密的字符串。</param>
+            <param name="key">密钥，且必须为8位。</param>
+            <returns>以Base64格式返回的加密字符串。</returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.DESEncrypt(System.String,System.String,System.Security.Cryptography.CipherMode)">
+            <summary>
+            进行DES加密。可与Java版本对应
+            </summary>
+            <param name="data">要加密的字符串。</param>
+            <param name="key">密钥，且必须为8位。</param>
+            <param name="mode">Java一般写法：Cipher.getInstance("DES/ECB/PKCS5Padding");C# 这边要des.Mode = CipherMode.ECB;</param>
+            <returns>以Base64格式返回的加密字符串。</returns>
+        </member>
+        <member name="M:DotNet.Security.Encrypt.DESDecrypt(System.String,System.String)">
+            <summary>
+            进行DES解密。
+            </summary>
+            <param name="data">要解密的以Base64</param>
+            <param name="key">密钥，且必须为8位。</param>
+            <returns>已解密的字符串。</returns>
+        </member>
+        <member name="M:DotNet.Security.License.EncryptProcess(System.String,System.String,System.String)">
+            <summary>
+            加密过程,其中d、n是RSACryptoServiceProvider生成的D、Modulus 
+            EncryptProcess(textBox1.Text, RSAKeyValue_D, RSAKeyValue_Modulus);       
+            </summary>
+            <param name="source"></param>
+            <param name="d"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.License.EncryptString(System.String,BigInteger,BigInteger)">
+            <summary>
+            功能：用指定的私钥(n,d)加密指定字符串source 
+            </summary>
+            <param name="source"></param>
+            <param name="d"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.License.DecryptProcess(System.String,System.String,System.String)">
+            <summary>
+             解密过程,其中e、n是RSACryptoServiceProvider生成的Exponent、Modulus 
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Security.License.DecryptString(System.String,BigInteger,BigInteger)">
+            <summary>
+            功能：用指定的公钥(n,e)解密指定字符串source 
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Threading.Thread.Sleep(System.Int32)">
+            <summary>
+            休眠，秒
+            </summary>
+        </member>
+        <member name="M:DotNet.Threading.Thread.SleepMillisecond(System.Int32)">
+            <summary>
+            休眠，毫秒
+            </summary>
+        </member>
+        <member name="T:DotNet.Tools.Convert">
+            <summary>
+            类型转换
+            </summary>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ToInt16(System.String)">
+            <summary>
+            验证是否是 Int16（short），是：返回此实例的的等效 short，否：返回 0
+            Int16 值类型表示值介于 -32768 到 +32767 之间的有符号整数。
+            SQL 中对应 smallint
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ToInt32(System.String)">
+            <summary>
+            验证是否是 Int32（int），是：返回此实例的等效 int，否：返回 0，
+            Int32 值类型表示值介于 -2,147,483,648 到 +2,147,483,647 之间的有符号整数。
+            SQL 中对应 int
+            </summary>
+            <param name="inputString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ToDateTime(System.String)">
+             <summary>
+             验证是否是 DateTime，是：返回次实例的等效 DateTime，否：返回 DateTime.MinValue;
+             datetime     (4字节)   
+            从   1753   年   1   月   1   日到   9999   年   12   月   31   日的日期和时间数据，精确度为百分之三秒
+            （等于   3.33   毫秒或   0.00333   秒）。如下表所示，把值调整到   .000、.003、或   .007   秒的增量。
+            smalldatetime   (2字节)   
+            从   1900   年   1   月   1   日到   2079   年   6   月   6   日的日期和时间数据，
+            精确到分钟。29.998   秒或更低的   smalldatetime   值向下舍入为最接近的分钟，29.999   秒或更高的
+            smalldatetime   值向上舍入为最接近的分钟。
+             </summary>
+             <param name="input"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ToGuid(System.String)">
+            <summary>
+            根据字符返回 GuID
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.StampToTime(System.String)">
+            <summary>
+            将时间戳转换成时间
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.TimeToStamp(System.DateTime)">
+            <summary>
+            将指定的时间转化为时间戳
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.IsNumber(System.String)">
+            <summary>
+            判断字符是否是数字
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.IsPhoneNumber(System.String)">
+            <summary>
+            判断字符是否是手机号
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.IsEnglish(System.String)">
+            <summary>
+            判断字符是否是英文
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ByteArrayToHexString(System.Byte[])">
+            <summary>
+            byte 转换成 16进制
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.HexStringToByteArray(System.String)">
+            <summary>
+            16进 转换成 byte
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Convert.JsonToObject``1(System.String)">
+            <summary>
+            JSON字符串转成对象
+            </summary>
+        </member>
+        <member name="M:DotNet.Tools.Convert.ObjectToJson(System.Object)">
+            <summary>
+            对象转成JSON字符串
+            </summary>
+        </member>
+        <member name="M:DotNet.Tools.Page.PageNumber(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            分页页码，一般用，如带?的
+            调用：PageNumber(total, pageSize, 1, System.IO.Path.GetFileName(Request.PhysicalPath) + "?page=");
+            </summary>
+            <param name="total"></param>
+            <param name="pageSize"></param>
+            <param name="page"></param>
+            <param name="frontUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Page.PageNumberUrlRewriter(System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            分页页码，Url重写用
+            调用：DotNet.Text.PageNumberUrlRewriter(total, pageSize, page, "/" + cat + "/page-"
+            ,"page","page-prev","page-next","page-current","<span>...</span>");
+            </summary>
+            <param name="total">总条数</param>
+            <param name="pageSize">每页多少条</param>
+            <param name="page">第几页</param>
+            <param name="frontUrl">其他相关的url参数</param>
+            <param name="pageCssClass">一般页码链接的css class</param>
+            <param name="pagePrevCssClass">上一页链接的css class</param>
+            <param name="pageNextCssClass">下一页链接的css class</param>
+            <param name="pageCurrentCssClass">当前页链接的css class</param>
+            <param name="ellipsisHtml">省略号的html代码，如<span>...</span></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.RandomNumber(System.Int32,System.Int32)">
+            <summary>
+            返回指定范围的随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.RandomNumbers(System.Int32,System.Int32)">
+            <summary>
+            返回一定范围的随机数，小于300用
+            </summary>
+            <param name="total">从1至total之间</param>
+            <param name="size">返回多少个</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.RandomNumbers1(System.Int32,System.Int32)">
+            <summary>
+            返回一定范围的随机数，大于300用
+            </summary>
+            <param name="total">从1至total之间</param>
+            <param name="size">返回多少个</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.ArrayFilterRepeat(System.String[])">
+            <summary>
+            过滤数组中的重复内容
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.DateTimeMin">
+            <summary>
+            DateTime(1753, 1, 1, 12, 0, 0);
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.Reverse(System.String)">
+            <summary>
+            字符翻转
+            </summary>
+            <param name="inputString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.YearMonthDateToString">
+            <summary>
+            返回20130606
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.YearMonthDateToString1">
+            <summary>
+            返回130606
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.YearToString">
+            <summary>
+            当前时间的年，2013
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.MonthToString">
+            <summary>
+            当前时间的月日，06
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.DateToString">
+            <summary>
+            当前时间的日期，28
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.TimeToString">
+            <summary>
+            返回095518
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.TimeToString1">
+            <summary>
+            返回095518123
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.ServerMapPath(System.String)">
+            <summary>
+            返回 Server.MapPath 
+            Server.MapPath("/") --> E:\temp\
+            </summary>
+            <param name="path">abc/</param>
+            <returns>E:\temp\</returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.BirthdayAge(System.DateTime)">
+            <summary>
+            根据生日得出岁数
+            </summary>
+            <param name="birthday"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.IntSwitch(System.Int32,System.Int32)">
+            <summary>
+            交换两个int的值
+            </summary>
+            <param name="i"></param>
+            <param name="j"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.GZipDecompress(System.IO.Stream)">
+            <summary>
+            解压缩 用GZip压缩的流
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.ArrayIndex(System.String,System.Char,System.Int32)">
+            <summary>
+            根据输入分解后返回索引的内容
+            </summary>
+            <param name="inputString">a_b_c</param>
+            <param name="separator">_</param>
+            <param name="index">2</param>
+            <returns>c</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DotNet.Tools.Utility.UrlParam(System.String,System.String)" -->
+        <member name="M:DotNet.Tools.Utility.MakePathName">
+            <summary>
+            生成网站的目录名：20100707
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.MakeFileName">
+            <summary>
+            生成文件名 09531788888
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Tools.Utility.MakeFileName(System.String)">
+            <summary>
+            生成文件名 09531788888.jpg
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DotNet.Tools.Utility.CreateLinkStringUrlEncode(System.Collections.Generic.Dictionary{System.String,System.String},System.Text.Encoding)" -->
+        <member name="M:DotNet.Text.Formate.SubString(System.String,System.Int32)">
+            <summary>
+            按大小截断字符串
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.SubString(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回 string.substring
+            从startIndex的下一个开始，共length个，string的length从1开始
+            </summary>
+            <param name="str"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.GetBetweenValue(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            取得开头到下一个结束之间的内容，是否包括这个开头和结尾的字符
+            </summary>
+            <param name="inputString"></param>
+            <param name="startValue"></param>
+            <param name="endValue"></param>
+            <param name="enableInclude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.GetBetweenValues(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            取得开头到下一个结束之间的所有内容，例如html中多个<a href="url">title</a> 
+            </summary>
+            <param name="inputString"></param>
+            <param name="startValue"></param>
+            <param name="endValue"></param>
+            <param name="enableInclude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.RemoveBetweenValue(System.String,System.String,System.String)">
+            <summary>
+            移除开头到下一个结束之间的所有内容，例如html中多个<!-- -->
+            </summary>
+            <param name="inputString"></param>
+            <param name="startValue"></param>
+            <param name="endValue"></param>
+            <param name="enableInclude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.RegexFilterHtml(System.String)">
+            <summary>
+            使用正则表达式过滤输入
+            过滤中文，英文之外的字符
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.FormateHtml(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            格式化html代码，需要配合RemoveHtml()使用
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.RemoveHtml(System.String)">
+            <summary>
+            除去html代码
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.CleanString(System.String,System.Int32)">
+            <summary>
+            过滤输入的字符串，并转换掉 html
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.FormatBytes(System.Int64)">
+            <summary>
+            输入字节数，返回最接近的数，例如1023G，1023M，1023KB等
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.FormatTime(System.Int32)">
+            <summary>
+            输入秒数，返回x分x秒
+            </summary>
+            <param name="seconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Text.Formate.DateFromNow(System.DateTime)">
+            <summary>
+            格式化显示时间为几个月,几天前,几小时前,几分钟前,或几秒前
+            </summary>
+            <param name="dt">要格式化显示的时间</param>
+            <returns>几个月,几天前,几小时前,几分钟前,或几秒前</returns>
+        </member>
+        <member name="M:DotNet.Web.Cache.#ctor">
+            <summary>
+            Ä¬ÈÏ¹¹Ôìº¯Êý
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Cache.#cctor">
+            <summary>
+            µÚÒ»´ÎÔËÐÐÊ± ³õÊ¼»¯ Cache
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Cache.Clear">
+            <summary>
+            Çå³ý Cache µÄËùÓÐÏî
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Cache.Clear(System.String)">
+            <summary>
+            Çå³ý¶ÔÓ¦ÖµµÄ Cache
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Cache.Insert(System.String,System.Object,System.Int32,DotNet.Web.CachesLevel)">
+            <summary>
+            Ð´Èë Cache
+            </summary>
+            <param name="key">¼ü</param>
+            <param name="obj">Öµ</param>
+            <param name="seconds">Ê±¼ä£¬ÃëÊý</param>
+            <param name="level">¼¶±ð£¬"normal"¡¢"high"</param>
+        </member>
+        <member name="M:DotNet.Web.Cache.Get(System.String)">
+            <summary>
+            È¡µÃ key ¶ÔÓ¦µÄ Cache
+            </summary>
+            <param name="key">¼ü</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Web.CachesLevel">
+            <summary>
+            Caches µÄ»º´æ¼¶±ð
+            </summary>
+        </member>
+        <member name="F:DotNet.Web.CachesLevel.Low">
+            <summary>
+            µÍ
+            </summary>
+        </member>
+        <member name="F:DotNet.Web.CachesLevel.Normal">
+            <summary>
+            ÖÐµÈ
+            </summary>
+        </member>
+        <member name="F:DotNet.Web.CachesLevel.High">
+            <summary>
+            ¸ß
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Cookie.WriteUserCookie(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="profileMod"></param>
+            <param name="expires"></param>
+        </member>
+        <member name="M:DotNet.Web.Cookie.GetUserCookie(System.String)">
+            <summary>
+            取得用户登录的cookie信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Web.Cookie.ClearUserCookie(System.String)">
+            <summary>
+            用户退出
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.Submit.BuildRequestParaToString(System.Collections.Generic.Dictionary{System.String,System.String},System.Text.Encoding)">
+            <summary>
+            生成要请求给支付宝的参数数组
+            </summary>
+            <param name="sParaTemp">请求前的参数数组</param>
+            <param name="code">字符编码</param>
+            <returns>要请求的参数数组字符串</returns>
+        </member>
+        <member name="M:DotNet.Web.Submit.BuildFormHtml(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.String)">
+            <summary>
+            构造提交表单HTML数据
+            </summary>
+            <param name="sParaTemp">请求参数数组</param>
+            <param name="action">网关地址</param>
+            <param name="method">提交方式。两个值可选：post、get</param>
+            <param name="strButtonValue">确认按钮显示文字</param>
+            <returns>提交表单HTML文本</returns>
+        </member>
+        <member name="M:DotNet.Web.HttpContext.ServerMapPath(System.String)">
+            <summary>
+            返回 Server.MapPath 
+            ServerMapPath("/") --> E:\temp\
+            </summary>
+            <param name="path">abc/</param>
+            <returns>E:\temp\</returns>
+        </member>
+        <member name="T:DotNet.Web.URLRewriter.BaseModuleRewriter">
+            <summary>
+            The base class for module rewriting.  This class is abstract, and therefore must be derived from.
+            </summary>
+            <remarks>Provides the essential base functionality for a rewriter using the HttpModule approach.</remarks>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.BaseModuleRewriter.Init(System.Web.HttpApplication)">
+            <summary>
+            Executes when the module is initialized.
+            </summary>
+            <param name="app">A reference to the HttpApplication object processing this request.</param>
+            <remarks>Wires up the HttpApplication's AuthorizeRequest event to the
+            <see cref="M:DotNet.Web.URLRewriter.BaseModuleRewriter.BaseModuleRewriter_AuthorizeRequest(System.Object,System.EventArgs)"/> event handler.</remarks>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.BaseModuleRewriter.BaseModuleRewriter_AuthorizeRequest(System.Object,System.EventArgs)">
+            <summary>
+            Called when the module's AuthorizeRequest event fires.
+            </summary>
+            <remarks>This event handler calls the <see cref="M:DotNet.Web.URLRewriter.BaseModuleRewriter.Rewrite(System.String,System.Web.HttpApplication)"/> method, passing in the
+            <b>RawUrl</b> and HttpApplication passed in via the <b>sender</b> parameter.</remarks>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.BaseModuleRewriter.Rewrite(System.String,System.Web.HttpApplication)">
+            <summary>
+            The <b>Rewrite</b> method must be overriden.  It is where the logic for rewriting an incoming
+            URL is performed.
+            </summary>
+            <param name="requestedRawUrl">The requested RawUrl.  (Includes full path and querystring.)</param>
+            <param name="app">The HttpApplication instance.</param>
+        </member>
+        <member name="T:DotNet.Web.URLRewriter.ModuleRewriter">
+            <summary>
+            Provides a rewriting HttpModule.
+            </summary>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.ModuleRewriter.Rewrite(System.String,System.Web.HttpApplication)">
+            <summary>
+            This method is called during the module's BeginRequest event.
+            </summary>
+            <param name="requestedRawUrl">The RawUrl being requested (includes path and querystring).</param>
+            <param name="app">The HttpApplication instance.</param>
+        </member>
+        <member name="T:DotNet.Web.URLRewriter.RewriterUtils">
+            <summary>
+            Provides utility helper methods for the rewriting HttpModule and HttpHandler.
+            </summary>
+            <remarks>This class is marked as internal, meaning only classes in the same assembly will be
+            able to access its methods.</remarks>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.RewriterUtils.RewriteUrl(System.Web.HttpContext,System.String)">
+            <summary>
+            Rewrite's a URL using <b>HttpContext.RewriteUrl()</b>.
+            </summary>
+            <param name="context">The HttpContext object to rewrite the URL to.</param>
+            <param name="sendToUrl">The URL to rewrite to.</param>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.RewriterUtils.RewriteUrl(System.Web.HttpContext,System.String,System.String@,System.String@)">
+            <summary>
+            Rewrite's a URL using <b>HttpContext.RewriteUrl()</b>.
+            </summary>
+            <param name="context">The HttpContext object to rewrite the URL to.</param>
+            <param name="sendToUrl">The URL to rewrite to.</param>
+            <param name="sendToUrlLessQString">Returns the value of sendToUrl stripped of the querystring.</param>
+            <param name="filePath">Returns the physical file path to the requested page.</param>
+        </member>
+        <member name="M:DotNet.Web.URLRewriter.RewriterUtils.ResolveUrl(System.String,System.String)">
+            <summary>
+            Converts a URL into one that is usable on the requesting client.
+            </summary>
+            <remarks>Converts ~ to the requesting application path.  Mimics the behavior of the 
+            <b>Control.ResolveUrl()</b> method, which is often used by control developers.</remarks>
+            <param name="appPath">The application path.</param>
+            <param name="url">The URL, which might contain ~.</param>
+            <returns>A resolved URL.  If the input parameter <b>url</b> contains ~, it is replaced with the
+            value of the <b>appPath</b> parameter.</returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.ImagePart(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取图片的部分内容（已重载）
+            </summary>
+            <param name="largeImageUrl">大图地址</param>
+            <param name="smallImageUrl">小图地址</param>
+            <param name="width">选择框宽度</param>
+            <param name="height">选择框高度</param>
+            <param name="top">选择框距离图片上边框的距离高度</param>
+            <param name="left">选择框距离图片左边框的距离宽度</param>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.ImagePart(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取图片的部分内容（已重载）
+            </summary>
+            <param name="largeImageUrl">大图地址</param>
+            <param name="smallImageUrl">小图地址</param>
+            <param name="width">选择框宽度</param>
+            <param name="height">选择框高度</param>
+            <param name="top">选择框距离图片上边框的距离高度</param>
+            <param name="left">选择框距离图片左边框的距离宽度</param>
+            <param name="origWidth">原图宽度</param>
+            <param name="origHeight">原图高度</param>
+            <param name="zoomWidth">缩放后图片宽度</param>
+            <param name="zoomHeight">缩放后图片高度</param>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.GetImageWidthHeight(System.String)">
+            <summary>
+            获得图像的 width height
+            [0]width
+            [1]height
+            </summary>
+            <param name="sourceImageUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.AddWatermarkToImg(System.IO.Stream,System.String,System.String,System.String)">
+            <summary>
+            给图片增加水印文字，图片体积减少成倍，但质量会有所缺损，但是要很仔细才看得出。
+            http://www.cnblogs.com/wdxinren/archive/2005/07/28/202230.html
+            </summary>
+            <param name="stream">上传的图片流</param>
+            <param name="path">保存到的路径</param>
+            <param name="waterMarkUrl">水印地址</param>
+            <param name="corner">水印角落</param>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.ImageThumbnail(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+             生成缩略图
+            </summary>
+            <param name="largeImagePhysicsPath">物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822</param>
+            <param name="thumbnailImagePhysicsPath">缩略图物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822</param>
+            <param name="fileName">文件名 20402714619.jpg</param>
+            <param name="smallFileName">缩略图文件名 20402714619__s.jpg</param>
+            <param name="width">宽</param>
+            <param name="height">高</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.ThumbnailImage(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+             生成缩略图
+            </summary>
+            <param name="sourcePhysicsPath">源物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822\</param>
+            <param name="targetPhysicsPath">目的物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822\</param>
+            <param name="sourceFileName">文件名 20402714619.jpg</param>
+            <param name="targetFileName">缩略图文件名 20402714619__s.jpg</param>
+            <param name="newWidth">宽</param>
+            <param name="newHeight">高，指定高度则是等比；输入0为固定宽度</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.GetEncoderParameters(System.Int32)">
+            <summary>
+            EncoderParameters
+            </summary>
+            <param name="quality"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.GetImageEncoder(System.String)">
+            <summary>
+            ImageCodecInfo
+            </summary>
+            <param name="formatDescription"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.AddWatermarkToImg(System.IO.Stream,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            在原图底部增加一点高度，画上logo等
+            DotNet.Drawing.Imaging.AddWatermarkToImg(file.InputStream, path + fileName, 
+                                   Server.MapPath("/") + @"/imgbds/2013/04/watermarkleft.png", Server.MapPath("/") + @"/imgbds/2013/04/watermarkright.png",
+                                   30, 2);
+            </summary>
+            <param name="stream">上传文件的流</param>
+            <param name="targetPhysicsPath">保存到那个路径</param>
+            <param name="waterMarkUrl1"></param>
+            <param name="waterMarkUrl2"></param>
+            <param name="height">增加一点的高度</param>
+            <param name="padding">上下左右空出多少</param>
+        </member>
+        <member name="M:DotNet.Drawing.ImageProcess.CaptureImage(System.String,System.String,System.Int32,System.Int32)">
+              <summary>   
+              从图片中截取一个最大面积的正方形，生成新图，注意新图是正方形，不是正方形比例会乱   
+              </summary>   
+              <param   name="sourcePhysicsPath">源物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822\</param>   
+              <param   name="targetPhysicsPath">目的物理路径 E:\Cnkoo\Cnkoo\Cnkoo.Shop\UploadImage\200822\</param>   
+              <param   name="width">新图的宽</param>   
+              <param   name="height">新图的高</param>   
+        </member>
+        <member name="T:DotNet.Configuration.URLRewriterConfig.RewriterConfigSerializerSectionHandler">
+            <summary>
+            Deserializes the markup in Web.config into an instance of the <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:DotNet.Configuration.URLRewriterConfig.RewriterConfigSerializerSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Creates an instance of the <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration"/> class.
+            </summary>
+            <remarks>Uses XML Serialization to deserialize the XML in the Web.config file into an
+            <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration"/> instance.</remarks>
+            <returns>An instance of the <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration"/> class.</returns>
+        </member>
+        <member name="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration">
+            <summary>
+            Specifies the configuration settings in the Web.config for the RewriterRule.
+            </summary>
+            <remarks>This class defines the structure of the Rewriter configuration file in the Web.config file.
+            Currently, it allows only for a set of rewrite rules; however, this approach allows for customization.
+            For example, you could provide a ruleset that <i>doesn't</i> use regular expression matching; or a set of
+            constant names and values, which could then be referenced in rewrite rules.
+            <p />
+            The structure in the Web.config file is as follows:
+            <code>
+            &lt;configuration&gt;
+            	&lt;configSections&gt;
+            		&lt;section name="RewriterConfig" 
+            		            type="URLRewriter.Config.RewriterConfigSerializerSectionHandler, URLRewriter" /&gt;
+            	&lt;/configSections&gt;
+            	
+            	&lt;RewriterConfig&gt;
+            		&lt;Rules&gt;
+            			&lt;RewriterRule&gt;
+            				&lt;LookFor&gt;<i>pattern</i>&lt;/LookFor&gt;
+            				&lt;SendTo&gt;<i>replace with</i>&lt;/SendTo&gt;
+            			&lt;/RewriterRule&gt;
+            			&lt;RewriterRule&gt;
+            				&lt;LookFor&gt;<i>pattern</i>&lt;/LookFor&gt;
+            				&lt;SendTo&gt;<i>replace with</i>&lt;/SendTo&gt;
+            			&lt;/RewriterRule&gt;
+            			...
+            			&lt;RewriterRule&gt;
+            				&lt;LookFor&gt;<i>pattern</i>&lt;/LookFor&gt;
+            				&lt;SendTo&gt;<i>replace with</i>&lt;/SendTo&gt;
+            			&lt;/RewriterRule&gt;
+            		&lt;/Rules&gt;
+            	&lt;/RewriterConfig&gt;
+            	
+            	&lt;system.web&gt;
+            		...
+            	&lt;/system.web&gt;
+            &lt;/configuration&gt;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration.GetConfig">
+            <summary>
+            GetConfig() returns an instance of the <b>RewriterConfiguration</b> class with the values populated from
+            the Web.config file.  It uses XML deserialization to convert the XML structure in Web.config into
+            a <b>RewriterConfiguration</b> instance.
+            </summary>
+            <returns>A <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration"/> instance.</returns>
+        </member>
+        <member name="P:DotNet.Configuration.URLRewriterConfig.RewriterConfiguration.Rules">
+            <summary>
+            A <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterRuleCollection"/> instance that provides access to a set of <see cref="T:DotNet.Configuration.URLRewriterConfig.RewriterRule"/>s.
+            </summary>
+        </member>
+        <member name="T:DotNet.Configuration.URLRewriterConfig.RewriterRule">
+            <summary>
+            Represents a rewriter rule.  A rewriter rule is composed of a pattern to search for and a string to replace
+            the pattern with (if matched).
+            </summary>
+        </member>
+        <member name="P:DotNet.Configuration.URLRewriterConfig.RewriterRule.LookFor">
+            <summary>
+            Gets or sets the pattern to look for.
+            </summary>
+            <remarks><b>LookFor</b> is a regular expression pattern.  Therefore, you might need to escape
+            characters in the pattern that are reserved characters in regular expression syntax (., ?, ^, $, etc.).
+            <p />
+            The pattern is searched for using the <b>System.Text.RegularExpression.Regex</b> class's <b>IsMatch()</b>
+            method.  The pattern is case insensitive.</remarks>
+        </member>
+        <member name="P:DotNet.Configuration.URLRewriterConfig.RewriterRule.SendTo">
+            <summary>
+            The string to replace the pattern with, if found.
+            </summary>
+            <remarks>The replacement string may use grouping symbols, like $1, $2, etc.  Specifically, the
+            <b>System.Text.RegularExpression.Regex</b> class's <b>Replace()</b> method is used to replace
+            the match in <see cref="P:DotNet.Configuration.URLRewriterConfig.RewriterRule.LookFor"/> with the value in <b>SendTo</b>.</remarks>
+        </member>
+        <member name="T:DotNet.Configuration.URLRewriterConfig.RewriterRuleCollection">
+            <summary>
+            The RewriterRuleCollection models a set of RewriterRules in the Web.config file.
+            </summary>
+            <remarks>
+            The RewriterRuleCollection is expressed in XML as:
+            <code>
+            &lt;RewriterRule&gt;
+              &lt;LookFor&gt;<i>pattern to search for</i>&lt;/LookFor&gt;
+              &lt;SendTo&gt;<i>string to redirect to</i>&lt;/LookFor&gt;
+            &lt;RewriterRule&gt;
+            &lt;RewriterRule&gt;
+              &lt;LookFor&gt;<i>pattern to search for</i>&lt;/LookFor&gt;
+              &lt;SendTo&gt;<i>string to redirect to</i>&lt;/LookFor&gt;
+            &lt;RewriterRule&gt;
+            ...
+            &lt;RewriterRule&gt;
+              &lt;LookFor&gt;<i>pattern to search for</i>&lt;/LookFor&gt;
+              &lt;SendTo&gt;<i>string to redirect to</i>&lt;/LookFor&gt;
+            &lt;RewriterRule&gt;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:DotNet.Configuration.URLRewriterConfig.RewriterRuleCollection.Add(DotNet.Configuration.URLRewriterConfig.RewriterRule)">
+            <summary>
+            Adds a new RewriterRule to the collection.
+            </summary>
+            <param name="r">A RewriterRule instance.</param>
+        </member>
+        <member name="P:DotNet.Configuration.URLRewriterConfig.RewriterRuleCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets a RewriterRule at a specified ordinal index.
+            </summary>
+        </member>
+        <member name="M:DotNet.Diagnostics.Process.IsRunningByName(System.String)">
+            <summary>
+            是否在运行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Diagnostics.Process.Execute(System.String,System.Int32)">
+            <summary>  
+            执行DOS命令，返回DOS命令的输出  
+            </summary>  
+            <param name="dosCommand">dos命令</param>  
+            <param name="seconds">等待命令执行的时间（单位：秒），  
+            如果设定为0，则无限等待</param>  
+            <returns>返回DOS命令的输出</returns>  
+        </member>
+        <member name="M:DotNet.Diagnostics.Process.Execute(System.String)">
+            <summary>
+            直接运行指定路径的exe文件，如果已经运行，则不运行；没有运行，则运行。即单例
+            </summary>
+            <param name="path">D:\DotNet\bin\Debug\dotnet.exe</param>
+        </member>
+        <member name="M:DotNet.Net.IPAddress.GetIPBan(System.String)">
+            <summary>
+            取得被封的 IP，若有，返回 true
+            </summary>
+            <param name="ip">192.168.0.1</param>
+        </member>
+        <member name="M:DotNet.Net.IPAddress.SetErrorCount(System.String)">
+            <summary>
+            错误计数
+            </summary>
+            <param name="ip">192.168.0.1</param>
+        </member>
+        <member name="M:DotNet.Net.IPAddress.GetCustomerIP(System.Web.HttpContext)">
+            <summary>
+            取得客户端的 IP
+            </summary>
+            <param name="current">System.Web.HttpContext</param>
+            <returns>string 192.168.0.1</returns>
+        </member>
+        <member name="M:DotNet.Net.HttpWebResponse.GetPostHtml(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Post结束后，获取返回的Html
+            </summary>
+            <param name="urlString"></param>
+            <param name="postData"></param>
+            <param name="referer"></param>
+            <param name="accept"></param>
+            <param name="userAgent"></param>
+            <param name="cookie"></param>
+            <param name="timeout"></param>
+            <param name="encodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Net.HttpWebResponse.FileDownload(System.String,System.String)">
+            <summary>
+            非断点续传
+            </summary>
+        </member>
+        <member name="T:Marry.Component.ValidateCode">
+            <summary>
+            生成验证码
+            aspx 的 Page_Load 使用方法
+            Components.ValidateCode.DrawImage();
+            </summary>
+        </member>
+        <member name="M:Marry.Component.ValidateCode.DrawImage">
+            <summary>
+            生成验证码图片
+            </summary>
+        </member>
+        <member name="M:Marry.Component.ValidateCode.CreateImages(System.String)">
+            <summary>
+            生成验证图片
+            </summary>
+            <param name="validateCode">验证字符</param>
+        </member>
+        <member name="M:Marry.Component.ValidateCode.RandomString(System.Int32)">
+            <summary>
+            生成验证码的随机字符
+            </summary>
+            <param name="number">生成字符的个数</param>
+            <returns>string</returns>
+        </member>
+    </members>
+</doc>

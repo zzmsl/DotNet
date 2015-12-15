@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EF2F26C-E9A3-47D8-9350-DE32BA7812D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNet</RootNamespace>
+    <AssemblyName>DotNet</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\DotNet.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DotNet.IO\Directory.cs" />
+    <Compile Include="DotNet.IO\Path.cs" />
+    <Compile Include="DotNet.IO\Text.cs" />
+    <Compile Include="DotNet.Security\BigInteger.cs" />
+    <Compile Include="DotNet.Security\Encrypt.cs" />
+    <Compile Include="DotNet.Security\License.cs" />
+    <Compile Include="DotNet.Security\RSAUtility.cs" />
+    <Compile Include="DotNet.Threading\Thread.cs" />
+    <Compile Include="DotNet.Tools\Convert.cs" />
+    <Compile Include="DotNet.Text\Formate.cs" />
+    <Compile Include="DotNet.Tools\Page.cs" />
+    <Compile Include="DotNet.Tools\Utility.cs" />
+    <Compile Include="DotNet.Web\Cache.cs" />
+    <Compile Include="DotNet.Drawing\ImageProcess.cs" />
+    <Compile Include="DotNet.Configuration\AppSettings.cs" />
+    <Compile Include="DotNet.Diagnostics\Process.cs" />
+    <Compile Include="DotNet.Net\IPAddress.cs" />
+    <Compile Include="DotNet.IO\File.cs" />
+    <Compile Include="DotNet.Net\HttpWebResponse.cs" />
+    <Compile Include="DotNet.Web\Cookie.cs" />
+    <Compile Include="DotNet.Web\Submit.cs" />
+    <Compile Include="DotNet.Web\HttpContext.cs" />
+    <Compile Include="DotNet.Web\ValidateCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DotNet.Web\URLRewriter.cs" />
+    <Compile Include="DotNet.Web\URLRewriterConfig.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
